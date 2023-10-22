@@ -1,5 +1,6 @@
 .todo {
-    min-height: 305px;
+    min-height: 244px;
+    border-bottom: 1px solid #e4e4e4;
 }
 
 .todo__list {

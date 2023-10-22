@@ -1,5 +1,6 @@
 import AddTodo from "../AddTodo/AddTodo";
 import TodoList from "../TodoList/TodoList";
+import TodoTools from "../TodoTools/TodoTools";
 import "./App.css";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <main className="main">
         <AddTodo />
         <TodoList />
-        {/* <TodoTools /> */}
+        <TodoTools />
       </main>
     </div>
   );

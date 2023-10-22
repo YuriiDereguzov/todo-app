@@ -1,3 +1,5 @@
+import AddTodo from "../AddTodo/AddTodo";
+import TodoList from "../TodoList/TodoList";
 import "./App.css";
 
 function App() {
@@ -7,8 +9,8 @@ function App() {
         <h1 className="title">todos</h1>
       </header>
       <main className="main">
-        {/* <AddTodo /> */}
-        {/* <TodoList /> */}
+        <AddTodo />
+        <TodoList />
         {/* <TodoTools /> */}
       </main>
     </div>

@@ -9,6 +9,7 @@ function AddTodo() {
         placeholder="Added todo"
         required
       />
+      <button className="add__button"></button>
     </form>
   );
 }

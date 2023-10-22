@@ -1,0 +1,9 @@
+.todo {
+    min-height: 305px;
+}
+
+.todo__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

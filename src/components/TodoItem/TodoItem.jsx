@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { toglleComplete } from "../../redux/todoSlice";
+import { toglleComplete, deleteTodo } from "../../redux/todoSlice";
 import "./TodoItem.css";
 
 function TodoItem({ id, title, completed }) {
@@ -19,19 +19,22 @@ function TodoItem({ id, title, completed }) {
     setTodoText(e.target.value);
   };
 
-  const handleSubmitEdit = (e) => {
-    e.preventDefault();
-    setIsEdit(!isEdit);
-  };
-
   const handleCompleteClick = () => {
     dispatch(toglleComplete({ id: id, completed: !completed }));
+  };
+
+  const handleDeleteClick = () => {
+    dispatch(deleteTodo({ id: id }));
+  }
+
+  const handleEditClick = () => {
+    setIsEdit(!isEdit);
   };
 
   return (
     <li className="todo__list-item">
       <button
-        type="submit"
+        type="checkbox"
         onClick={handleCompleteClick}
         className={`todo__button-status ${
           completed && "todo_button-status_success"
@@ -52,10 +55,14 @@ function TodoItem({ id, title, completed }) {
       )}
       <button
         type="submit"
-        onClick={handleSubmitEdit}
+        onClick={handleEditClick}
         className="todo__button-edit"
       ></button>
-      <button className="todo__button-delete"></button>
+      <button
+        type="submit"
+        onClick={handleDeleteClick}
+        className="todo__button-delete"
+      ></button>
     </li>
   );
 }

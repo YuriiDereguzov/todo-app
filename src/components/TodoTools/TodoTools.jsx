@@ -1,10 +1,15 @@
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
+
 import "./TodoTools.css";
 
-function TodoTools(props) {
+function TodoTools() {
+  const todos = useSelector((state) => state.todos);
+  const completedTodos = todos.filter((todo) => todo.completed === false);
+
   return (
     <div className="tools">
-      <p className="tools__info">{props.countsTodo} item todos</p>
+      {/* <p className="tools__info">{completedTodos.length} item todos</p> */}
+      <p className="tools__info">{completedTodos.length}{completedTodos.length > 1 ?  " items todos" : " item todo"}</p>
       <div className="tools__buttons">
         <button
           aria-label="All"
@@ -35,11 +40,4 @@ function TodoTools(props) {
   );
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     countsTodo: state.countsTodo
-//   }
-// }
-
-// export default connect(mapStateToProps)(TodoTools);
-export default connect()(TodoTools);
+export default TodoTools;

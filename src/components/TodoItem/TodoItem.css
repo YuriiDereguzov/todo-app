@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-.todo__button-status_active {
+.todo_button-status_success {
   border-color: #00ab00;
   background-image: url(../../images/gui_checkmark_icon.svg);
   background-size: 65%;

@@ -3,16 +3,13 @@ import TodoItem from "../TodoItem/TodoItem";
 import "./TodoList.css";
 
 function TodoList() {
-  const todos = useSelector((state) => {
-    const { todosReducer } = state;
-    return todosReducer.todos;
-  });
+  const todos = useSelector((state) => state.todos);
 
   return (
     <div className="todo">
       <ul className="todo__list">
-        {todos.map((res) => {
-          return <TodoItem key={res.id} data={res} />;
+        {todos.map((todo) => {
+          return <TodoItem key={todo.id} {...todo} />;
         })}
       </ul>
     </div>

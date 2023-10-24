@@ -1,24 +1,26 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import uniqid from "uniqid";
+import { addTodo } from "../../redux/todoSlice";
 import "./AddTodo.css";
-import { todoCreate } from "../../redux/actions";
 
-function AddTodo(props) {
-  const [todo, setTodo] = useState("");
+function AddTodo() {
+  const [value, setValue] = useState("");
 
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    setTodo(e.target.value);
+    setValue(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const id = uniqid();
-    dispatch(todoCreate(todo, id));
-    setTodo("");
+    dispatch(
+      addTodo({
+        title: value,
+      })
+    );
+    setValue("");
   };
 
   return (
@@ -27,7 +29,7 @@ function AddTodo(props) {
         className="add__input"
         type="text"
         minLength="2"
-        value={todo}
+        value={value}
         onChange={handleChange}
         placeholder="Added todo"
         required

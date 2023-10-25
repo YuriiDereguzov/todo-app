@@ -46,30 +46,52 @@
   background-position: center;
 }
 
-.todo__button-edit {
+.todo_button_edit {
   margin-left: auto;
-  padding: 0;
+  /* padding: 0; */
   background-color: #e4d3d2;
-  border: none;
-  min-width: 30px;
-  height: 30px;
+  /* border: none; */
+  /* min-width: 30px; */
+  /* height: 30px; */
   background-image: url(../../images/edit_icon.svg);
   background-size: 65%;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
-.todo__button-delete {
+.todo_button_delete {
   margin-left: 3px;
-  padding: 0;
+  /* padding: 0; */
   background-color: #e4d3d2;
-  border: none;
-  min-width: 30px;
-  height: 30px;
+  /* border: none; */
+  /* min-width: 30px; */
+  /* height: 30px; */
   background-image: url(../../images/delete_icon.svg);
   background-size: 65%;
   background-repeat: no-repeat;
   background-position: center;
+  /* border-radius: 5px; */
+}
+
+.todo_button_save {
+  margin-left: auto;
+  background-color: #07d307;
+  background-image: url(../../images/downarrow.svg);
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.todo__button {
+  padding: 0;
+  border: none;
+  min-width: 30px;
+  height: 30px;
   border-radius: 5px;
+}
+
+.todo_text_active {
+  text-decoration: line-through;
+  color: #e4e4e4;
 }

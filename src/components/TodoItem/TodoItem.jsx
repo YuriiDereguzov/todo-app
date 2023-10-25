@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { toglleComplete, deleteTodo } from "../../redux/todoSlice";
+import { toglleComplete, deleteTodo, editTodo } from "../../redux/todoSlice";
 import "./TodoItem.css";
 
 function TodoItem({ id, title, completed }) {
@@ -25,9 +25,16 @@ function TodoItem({ id, title, completed }) {
 
   const handleDeleteClick = () => {
     dispatch(deleteTodo({ id: id }));
-  }
+  };
 
   const handleEditClick = () => {
+    setIsEdit(!isEdit);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(editTodo({ id: id, title: todoText }));
     setIsEdit(!isEdit);
   };
 
@@ -41,7 +48,9 @@ function TodoItem({ id, title, completed }) {
         }`}
       ></button>
       {isEdit ? (
-        <p className="todo__text">{todoText}</p>
+        <p className={`todo__text ${completed && "todo_text_active"}`}>
+          {todoText}
+        </p>
       ) : (
         <input
           className="todo__input"
@@ -53,15 +62,28 @@ function TodoItem({ id, title, completed }) {
           required
         />
       )}
-      <button
-        type="submit"
-        onClick={handleEditClick}
-        className="todo__button-edit"
-      ></button>
+
+      {isEdit ? (
+        <button
+          type="submit"
+          onClick={handleEditClick}
+          className="todo__button todo_button_edit"
+          // className="todo__button-edit"
+        ></button>
+      ) : (
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="todo__button todo_button_save"
+          // className="todo__button-save"
+        ></button>
+      )}
+
       <button
         type="submit"
         onClick={handleDeleteClick}
-        className="todo__button-delete"
+        className="todo__button todo_button_delete"
+        // className="todo__button-delete"
       ></button>
     </li>
   );

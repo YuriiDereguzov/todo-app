@@ -1,39 +1,71 @@
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { editView } from "../../redux/viewSlice";
+import { deleteTodoCompleted } from "../../redux/todoSlice";
 import "./TodoTools.css";
 
 function TodoTools() {
   const todos = useSelector((state) => state.todos);
-  const completedTodos = todos.filter((todo) => todo.completed === false);
+  const activeTodos = todos.filter((todo) => todo.completed === false);
+
+  const view = useSelector((state) => state.view);
+  const dispatch = useDispatch();
+
+  const handleEditClickAll = () => {
+    dispatch(editView({ view: "All" }));
+  };
+
+  const handleEditClickActive = () => {
+    dispatch(editView({ view: "Active" }));
+  };
+
+  const handleEditClickCompleted = () => {
+    dispatch(editView({ view: "Completed" }));
+  };
+
+  const handleDeleteCompleted = () => {
+    dispatch(deleteTodoCompleted());
+  };
 
   return (
     <div className="tools">
-      {/* <p className="tools__info">{completedTodos.length} item todos</p> */}
-      <p className="tools__info">{completedTodos.length}{completedTodos.length > 1 ?  " items todos" : " item todo"}</p>
+      <p className="tools__info">
+        {activeTodos.length}
+        {activeTodos.length > 1 ? " items todos" : " item todo"}
+      </p>
       <div className="tools__buttons">
         <button
           aria-label="All"
-          className="tools__button tools_button_active"
-          // className={`tools__button ${list == "All" && "tools__button_active"}`}
+          onClick={handleEditClickAll}
+          className={`tools__button ${
+            view.view === "All" && "tools_button_active"
+          }`}
         >
           All
         </button>
         <button
           aria-label="Active"
-          className="tools__button"
-          // className={`tools__button ${list === "Active" && "tools__button_active"}`}
+          onClick={handleEditClickActive}
+          className={`tools__button ${
+            view.view === "Active" && "tools_button_active"
+          }`}
         >
           Active
         </button>
         <button
           aria-label="Completed"
-          className="tools__button"
-          // className={`tools__button ${list === "Completed" && "tools__button_active"}`}
+          onClick={handleEditClickCompleted}
+          className={`tools__button ${
+            view.view === "Completed" && "tools_button_active"
+          }`}
         >
           Completed
         </button>
       </div>
-      <button aria-label="tools__clear" className="tools__button">
+      <button
+        aria-label="tools__clear"
+        className="tools__button"
+        onClick={handleDeleteCompleted}
+      >
         Clear Completed
       </button>
     </div>

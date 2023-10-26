@@ -31,7 +31,7 @@ function AddTodo() {
         minLength="2"
         value={value}
         onChange={handleChange}
-        placeholder="Added todo"
+        placeholder="What needs to be done?"
         required
       />
       <button className="add__button"></button>

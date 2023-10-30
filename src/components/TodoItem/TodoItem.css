@@ -95,3 +95,9 @@
   text-decoration: line-through;
   color: #e4e4e4;
 }
+
+@media screen and (max-width: 500px) {
+  .todo__text {
+    font-size: 16px;
+  }
+}

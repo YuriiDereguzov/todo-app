@@ -33,3 +33,9 @@
     padding: 0;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 500px) {
+  .add__input {
+    font-size: 16px;
+  }
+}

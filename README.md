@@ -1,3 +1,41 @@
+# Проект todo-app
+
+## Введение
+
+todo-list - небольшой проект созданный для применения на практике полученных знаний использования библиотеки Redux Toolkit и препроцессора SCSS
+
+## Ссылки на проект
+
+[GitHub] — https://github.com/YuriiDereguzov/todo-app
+
+[Deploy] — [Todo-app](https://yuriidereguzov.github.io/todo-app/ "Ссылка на сайт")
+
+## Технологии, инструменты и стек:
+
+<ul>
+  <li>Flexbox</li>
+  <li>Адаптивная вёрстка</li>
+  <li>БЭМ</li>
+  <li>SCSS</li>
+  <li>JavaScript <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/javascript/javascript.png" alt="JavaScript"></li>
+    <li>React <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/react/react.png" alt="React"></li>
+    <li>Redux</li>
+</ul>
+
+## Интерфейс:
+
+<ul>
+  <li>Поля для ввода новой задачи</li>
+  <li>Отображение списков задач все/не выполненные/выполненные</li>
+  <li>Редактирование/удаление задач</li>
+  <li>Отметка выполненной задачи</li>
+  <li>Очистка выполненных задач</li>
+</ul>
+
+## Статус проекта:
+
+Планируется переписать стили испрользуя SCSS.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

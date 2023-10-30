@@ -1,6 +1,9 @@
 {
   "name": "todo-app",
   "version": "0.1.0",
+  "homepage": "https://yuriidereguzov.github.io/todo-app",
+  "description": "todos - приложение с задачами",
+  "author": "Yurii Dereguzov",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -19,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

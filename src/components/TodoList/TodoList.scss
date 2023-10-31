@@ -53,12 +53,18 @@
     border: 2px solid #e4d3d2;
     border-radius: 50%;
     cursor: pointer;
+    &:hover {
+      border-color: #00ab00;
+    }
     &_success {
       border-color: #00ab00;
       background-image: url(../../images/gui_checkmark_icon.svg);
       background-size: 65%;
       background-repeat: no-repeat;
       background-position: center;
+      &:hover {
+        background-image: url(../../images/minus_icon.svg);
+      }
     }
   }
   &__button {
@@ -68,6 +74,9 @@
     height: 30px;
     border-radius: 5px;
     cursor: pointer;
+    &:hover {
+      background-size: 70%;
+    }
     &_edit {
       margin-left: auto;
       background-color: #e4d3d2;

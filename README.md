@@ -16,10 +16,10 @@ ToDo - небольшой проект созданный для примене�
   <li>Flexbox</li>
   <li>Адаптивная вёрстка</li>
   <li>БЭМ</li>
-  <li>SCSS <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/react/sass.png" alt="Sass"></li>
+  <li>SCSS <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/sass/sass.png" alt="Sass"></li>
   <li>JavaScript <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/javascript/javascript.png" alt="JavaScript"></li>
-    <li>React <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/react/react.png" alt="React"></li>
-    <li>Redux <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/react/redux.png" alt="Redux"></li>
+  <li>React <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/react/react.png" alt="React"></li>
+  <li>Redux <img style="width: 3%" src="https://github.com/github/explore/blob/main/topics/redux/redux.png" alt="Redux"></li>
 </ul>
 
 ## Интерфейс:

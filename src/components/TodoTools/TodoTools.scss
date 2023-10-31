@@ -21,6 +21,9 @@
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 7px;
+    &:hover {
+      box-shadow: inset 0px 0px 10px #ead4d5;
+    }
     &_active {
       border: 1px solid #ead4d5;
     }

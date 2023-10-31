@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { editView } from "../../redux/viewSlice";
 import { deleteTodoCompleted } from "../../redux/todoSlice";
-import "./TodoTools.css";
+// import "./TodoTools.css";
+import "./TodoTools.scss";
 
 function TodoTools() {
   const todos = useSelector((state) => state.todos);
@@ -37,7 +38,7 @@ function TodoTools() {
           aria-label="All"
           onClick={handleEditClickAll}
           className={`tools__button ${
-            view.view === "All" && "tools_button_active"
+            view.view === "All" && "tools__button_active"
           }`}
         >
           All
@@ -46,7 +47,7 @@ function TodoTools() {
           aria-label="Active"
           onClick={handleEditClickActive}
           className={`tools__button ${
-            view.view === "Active" && "tools_button_active"
+            view.view === "Active" && "tools__button_active"
           }`}
         >
           Active
@@ -55,7 +56,7 @@ function TodoTools() {
           aria-label="Completed"
           onClick={handleEditClickCompleted}
           className={`tools__button ${
-            view.view === "Completed" && "tools_button_active"
+            view.view === "Completed" && "tools__button_active"
           }`}
         >
           Completed

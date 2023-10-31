@@ -1,0 +1,104 @@
+.todo {
+  min-height: 244px;
+  border-bottom: 1px solid #e4e4e4;
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    &-item {
+      padding: 15px;
+      border-bottom: 1px solid #e4e4e4;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__message {
+    margin: 0;
+    padding: 20px;
+    color: #e4e4e4;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  &__text {
+    margin: 0;
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: 400;
+    word-wrap: break-word;
+    overflow: hidden;
+    &_active {
+      text-decoration: line-through;
+      color: #e4e4e4;
+    }
+  }
+  &__input {
+    margin: 0 20px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #e4d3d2;
+    outline: none;
+  }
+  &__button-status {
+    background-color: #ffffff;
+    padding: 0;
+    min-width: 30px;
+    height: 30px;
+    border: 2px solid #e4d3d2;
+    border-radius: 50%;
+    cursor: pointer;
+    &_success {
+      border-color: #00ab00;
+      background-image: url(../../images/gui_checkmark_icon.svg);
+      background-size: 65%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  &__button {
+    padding: 0;
+    border: none;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    &_edit {
+      margin-left: auto;
+      background-color: #e4d3d2;
+      background-image: url(../../images/edit_icon.svg);
+      background-size: 65%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &_delete {
+      margin-left: 3px;
+      background-color: #e4d3d2;
+      background-image: url(../../images/delete_icon.svg);
+      background-size: 65%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &_save {
+      margin-left: auto;
+      background-color: #07d307;
+      background-image: url(../../images/downarrow.svg);
+      background-size: 55%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .todo {
+    &__text {
+      font-size: 16px;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import TodoItem from "../TodoItem/TodoItem";
-import "./TodoList.css";
+// import "./TodoList.css";
+import "./TodoList.scss";
 
 function TodoList() {
   const todos = useSelector((state) => state.todos);
@@ -13,10 +14,10 @@ function TodoList() {
       : todos.filter((todo) => todo.completed === true);
 
   return (
-    <div className="todo">
+    <section className="todo">
       <ul className="todo__list">
         {filteredTodos.length === 0 && (
-          <h2 className="todo__list-message">{`${
+          <h2 className="todo__message">{`${
             view.view === "All" ? "Add Todo" : "Nothing in " + view.view
           }`}</h2>
         )}
@@ -24,7 +25,7 @@ function TodoList() {
           <TodoItem key={todo.id} {...todo} />
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 

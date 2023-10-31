@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-.todo_button-status_success {
+.todo__button-status_success {
   border-color: #00ab00;
   background-image: url(../../images/gui_checkmark_icon.svg);
   background-size: 65%;
@@ -46,7 +46,7 @@
   background-position: center;
 }
 
-.todo_button_edit {
+.todo__button_edit {
   margin-left: auto;
   /* padding: 0; */
   background-color: #e4d3d2;
@@ -60,7 +60,7 @@
   /* border-radius: 5px; */
 }
 
-.todo_button_delete {
+.todo__button_delete {
   margin-left: 3px;
   /* padding: 0; */
   background-color: #e4d3d2;
@@ -74,7 +74,7 @@
   /* border-radius: 5px; */
 }
 
-.todo_button_save {
+.todo__button_save {
   margin-left: auto;
   background-color: #07d307;
   background-image: url(../../images/downarrow.svg);
@@ -91,7 +91,7 @@
   border-radius: 5px;
 }
 
-.todo_text_active {
+.todo__text_active {
   text-decoration: line-through;
   color: #e4e4e4;
 }

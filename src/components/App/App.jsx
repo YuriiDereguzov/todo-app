@@ -1,7 +1,6 @@
 import AddTodo from "../AddTodo/AddTodo";
 import TodoList from "../TodoList/TodoList";
 import TodoTools from "../TodoTools/TodoTools";
-// import "./App.css";
 import "./App.scss";
 
 function App() {

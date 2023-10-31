@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { editView } from "../../redux/viewSlice";
 import { deleteTodoCompleted } from "../../redux/todoSlice";
-// import "./TodoTools.css";
 import "./TodoTools.scss";
 
 function TodoTools() {

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { toglleComplete, deleteTodo, editTodo } from "../../redux/todoSlice";
-// import "./TodoItem.css";
 
 function TodoItem({ id, title, completed }) {
   const [isEdit, setIsEdit] = useState(true);
@@ -68,14 +67,12 @@ function TodoItem({ id, title, completed }) {
           type="submit"
           onClick={handleEditClick}
           className="todo__button todo__button_edit"
-          // className="todo__button-edit"
         ></button>
       ) : (
         <button
           type="submit"
           onClick={handleSubmit}
           className="todo__button todo__button_save"
-          // className="todo__button-save"
         ></button>
       )}
 
@@ -83,7 +80,6 @@ function TodoItem({ id, title, completed }) {
         type="submit"
         onClick={handleDeleteClick}
         className="todo__button todo__button_delete"
-        // className="todo__button-delete"
       ></button>
     </li>
   );

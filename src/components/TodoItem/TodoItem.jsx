@@ -38,7 +38,7 @@ function TodoItem({ id, title, completed }) {
   };
 
   return (
-    <li className="todo__list-item">
+    <>
       <button
         type="checkbox"
         onClick={handleCompleteClick}
@@ -81,7 +81,7 @@ function TodoItem({ id, title, completed }) {
         onClick={handleDeleteClick}
         className="todo__button todo__button_delete"
       ></button>
-    </li>
+    </>
   );
 }
 

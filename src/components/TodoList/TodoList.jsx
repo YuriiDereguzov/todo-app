@@ -1,8 +1,11 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import TodoItem from "../TodoItem/TodoItem";
+import { setTodos } from "../../redux/todoSlice";
 import "./TodoList.scss";
 
 function TodoList() {
+  const dispatch = useDispatch();
+
   const todos = useSelector((state) => state.todos);
   const view = useSelector((state) => state.view);
   const filteredTodos =
@@ -11,6 +14,44 @@ function TodoList() {
       : view.view === "Active"
       ? todos.filter((todo) => todo.completed === false)
       : todos.filter((todo) => todo.completed === true);
+
+  const onDragLeave = (e) => {};
+
+  const onDragEnd = (e) => {
+    // e.target.style.background = 'white'
+  };
+
+  const onDragOver = (e) => {
+    e.preventDefault();
+    // e.target.style.background = 'lightgrey'
+  };
+
+  let curentTodoId = null;
+  const onDragStart = (e, todo) => {
+    curentTodoId = todo.id;
+  };
+
+  const onDrop = (e, todo) => {
+    e.preventDefault();
+
+    const newIndex = todos.findIndex((x) => x.id === todo.id);
+    const oldIndex = todos.findIndex((x) => x.id === curentTodoId);
+
+    if (newIndex >= todos.length) {
+      let k = newIndex - todos.length + 1;
+
+      while (k--) {
+        todos.push(undefined);
+      }
+    }
+
+    const todosArr = Array.from(todos);
+    // const el = todosArr.splice(oldIndex, 1)[0];
+    // todosArr.splice(newIndex, 0, el);
+    todosArr.splice(newIndex, 0, todosArr.splice(oldIndex, 1)[0]);
+
+    dispatch(setTodos(todosArr));
+  };
 
   return (
     <section className="todo">
@@ -21,7 +62,19 @@ function TodoList() {
           }`}</h2>
         )}
         {filteredTodos.map((todo) => (
-          <TodoItem key={todo.id} {...todo} />
+          <li
+            className="todo__list-item"
+            draggable
+            onDragStart={(e) => onDragStart(e, todo)}
+            onDragLeave={(e) => onDragLeave(e)}
+            onDragEnd={(e) => onDragEnd(e)}
+            onDragOver={(e) => onDragOver(e)}
+            onDrop={(e) => onDrop(e, todo)}
+            key={todo.id}
+          >
+            {/* <TodoItem key={todo.id} {...todo} /> */}
+            <TodoItem {...todo} />
+          </li>
         ))}
       </ul>
     </section>

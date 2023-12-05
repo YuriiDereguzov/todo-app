@@ -17,6 +17,10 @@ const todoSlice = createSlice({
       };
       state.push(newTodo);
     },
+    setTodos: (state, todos) => {
+      state.splice(0, state.length );
+      state.push(...todos.payload);
+    },
     toglleComplete: (state, action) => {
       const index = state.findIndex((todo) => todo.id === action.payload.id);
       state[index].completed = action.payload.completed;
@@ -36,6 +40,7 @@ const todoSlice = createSlice({
 
 export const {
   addTodo,
+  setTodos,
   toglleComplete,
   deleteTodo,
   editTodo,

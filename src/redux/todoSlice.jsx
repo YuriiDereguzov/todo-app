@@ -6,7 +6,9 @@ const todoSlice = createSlice({
   initialState: [
     { id: uniqid(), title: "Первая задача!", completed: true },
     { id: uniqid(), title: "Вторая задача!", completed: true },
-    { id: uniqid(), title: "Третья задача!", completed: false }
+    { id: uniqid(), title: "Третья задача, hold!", completed: false, hold: true},
+    { id: uniqid(), title: "Четвертая задача!", completed: false },
+    { id: uniqid(), title: "Пятая задача!", completed: false },
   ],
   reducers: {
     addTodo: (state, action) => {

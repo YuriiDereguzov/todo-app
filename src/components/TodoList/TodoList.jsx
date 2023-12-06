@@ -33,25 +33,36 @@ function TodoList() {
 
   const onDrop = (e, todo) => {
     e.preventDefault();
+    const todosArr = Array.from(todos);
+    if (todo !== todos[2] && curentTodoId !== todos[2].id) {
+      const newIndex = todos.findIndex((x) => x.id === todo.id);
+      const oldIndex = todos.findIndex((x) => x.id === curentTodoId);
 
-    const newIndex = todos.findIndex((x) => x.id === todo.id);
-    const oldIndex = todos.findIndex((x) => x.id === curentTodoId);
-
-    if (newIndex >= todos.length) {
-      let k = newIndex - todos.length + 1;
-
-      while (k--) {
-        todos.push(undefined);
-      }
+      todosArr.splice(newIndex, 0, todosArr.splice(oldIndex, 1)[0]);
     }
 
-    const todosArr = Array.from(todos);
-    // const el = todosArr.splice(oldIndex, 1)[0];
-    // todosArr.splice(newIndex, 0, el);
-    todosArr.splice(newIndex, 0, todosArr.splice(oldIndex, 1)[0]);
-
+    const holdIndex = todosArr.findIndex(x => !!x.hold);
+    if (holdIndex !== 2) {
+      todosArr.splice(2, 0, todosArr.splice(holdIndex, 1)[0]);
+    }
     dispatch(setTodos(todosArr));
   };
+
+
+  // const onDrop = (e, todo) => {
+  //   e.preventDefault();
+
+  //   const newIndex = todos.findIndex((x) => x.id === todo.id);
+  //   const oldIndex = todos.findIndex((x) => x.id === curentTodoId);
+
+  //   const todosArr = Array.from(todos);
+  //   // const el = todosArr.splice(oldIndex, 1)[0];
+  //   // todosArr.splice(newIndex, 0, el);
+  
+  //   todosArr.splice(newIndex, 0, todosArr.splice(oldIndex, 1)[0]);
+
+  //   dispatch(setTodos(todosArr));
+  // };
 
   return (
     <section className="todo">

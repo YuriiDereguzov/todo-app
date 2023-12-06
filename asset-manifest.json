@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/todo-app/static/css/main.685dfc53.css",
-    "main.js": "/todo-app/static/js/main.509538b7.js",
+    "main.js": "/todo-app/static/js/main.e45dd3f7.js",
     "static/media/Inter-Medium.woff": "/todo-app/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
     "static/media/Inter-Black.woff": "/todo-app/static/media/Inter-Black.c6938660eec019fefd68.woff",
     "static/media/Inter-Regular.woff": "/todo-app/static/media/Inter-Regular.8c206db99195777c6769.woff",
@@ -15,10 +15,10 @@
     "static/media/minus_icon.svg": "/todo-app/static/media/minus_icon.5d1c8e634476a7c77e7d.svg",
     "static/media/gui_checkmark_icon.svg": "/todo-app/static/media/gui_checkmark_icon.63189e9068ae5c727331.svg",
     "main.685dfc53.css.map": "/todo-app/static/css/main.685dfc53.css.map",
-    "main.509538b7.js.map": "/todo-app/static/js/main.509538b7.js.map"
+    "main.e45dd3f7.js.map": "/todo-app/static/js/main.e45dd3f7.js.map"
   },
   "entrypoints": [
     "static/css/main.685dfc53.css",
-    "static/js/main.509538b7.js"
+    "static/js/main.e45dd3f7.js"
   ]
 }

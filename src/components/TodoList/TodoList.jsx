@@ -27,27 +27,53 @@ function TodoList() {
   };
 
   let curentTodoId = null;
+  let curentTodoHold = null;
+  
   const onDragStart = (e, todo) => {
     curentTodoId = todo.id;
+    curentTodoHold = todo.holdIndex;
   };
 
   const onDrop = (e, todo) => {
     e.preventDefault();
     const todosArr = Array.from(todos);
-    if (todo !== todos[2] && curentTodoId !== todos[2].id) {
+    if (!todo.holdIndex && !curentTodoHold) {
       const newIndex = todos.findIndex((x) => x.id === todo.id);
       const oldIndex = todos.findIndex((x) => x.id === curentTodoId);
 
       todosArr.splice(newIndex, 0, todosArr.splice(oldIndex, 1)[0]);
     }
 
-    const holdIndex = todosArr.findIndex(x => !!x.hold);
-    if (holdIndex !== 2) {
-      todosArr.splice(2, 0, todosArr.splice(holdIndex, 1)[0]);
-    }
+    const holdTodoItems = todosArr.filter(
+      (r) => typeof r.holdIndex === "number"
+    );
+    holdTodoItems.forEach((item) => {
+      const currentIndex = todosArr.indexOf(item);
+
+      if (currentIndex !== item.holdIndex) {
+        todosArr.splice(item.holdIndex, 0, todosArr.splice(currentIndex, 1)[0]);
+      }
+    });
+
     dispatch(setTodos(todosArr));
   };
 
+  // const onDrop = (e, todo) => {
+  //   e.preventDefault();
+  //   const todosArr = Array.from(todos);
+  //   if (todo !== todos[2] && curentTodoId !== todos[2].id) {
+  //     const newIndex = todos.findIndex((x) => x.id === todo.id);
+  //     const oldIndex = todos.findIndex((x) => x.id === curentTodoId);
+
+  //     todosArr.splice(newIndex, 0, todosArr.splice(oldIndex, 1)[0]);
+  //   }
+
+  //   const holdIndex = todosArr.findIndex(x => !!x.hold);
+  //   if (holdIndex !== 2) {
+  //     todosArr.splice(2, 0, todosArr.splice(holdIndex, 1)[0]);
+  //   }
+  //   dispatch(setTodos(todosArr));
+  // };
 
   // const onDrop = (e, todo) => {
   //   e.preventDefault();
@@ -58,7 +84,7 @@ function TodoList() {
   //   const todosArr = Array.from(todos);
   //   // const el = todosArr.splice(oldIndex, 1)[0];
   //   // todosArr.splice(newIndex, 0, el);
-  
+
   //   todosArr.splice(newIndex, 0, todosArr.splice(oldIndex, 1)[0]);
 
   //   dispatch(setTodos(todosArr));

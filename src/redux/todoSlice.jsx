@@ -4,11 +4,11 @@ import uniqid from "uniqid";
 const todoSlice = createSlice({
   name: "todos",
   initialState: [
-    { id: uniqid(), title: "Первая задача!", completed: true },
-    { id: uniqid(), title: "Вторая задача!", completed: true },
-    { id: uniqid(), title: "Третья задача, hold!", completed: false, hold: true},
-    { id: uniqid(), title: "Четвертая задача!", completed: false },
-    { id: uniqid(), title: "Пятая задача!", completed: false },
+    { id: uniqid(), title: "Первая задача!", completed: false },
+    { id: uniqid(), title: "Вторая задача!", completed: false },
+    { id: uniqid(), title: "Третья задача, hold!", completed: true, holdIndex: 2 },
+    { id: uniqid(), title: "Четвертая задача", completed: false },
+    { id: uniqid(), title: "Пятая задача, hold!", completed: true, holdIndex:4 },
   ],
   reducers: {
     addTodo: (state, action) => {
